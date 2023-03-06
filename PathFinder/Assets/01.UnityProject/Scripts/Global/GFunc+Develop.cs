@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public static partial class GFunc
@@ -49,11 +50,31 @@ public static partial class GFunc
     #endregion      // Assert for debug
 
     #region Vaild Func
-    public static bool IsValid<T>(this T component_)
+    // 컴포넌트의 유효성 검사
+    public static bool IsValid<T>(this T component_) where T : Component
     {
         Component convert_ = (Component)(component_ as Component);
         bool isInvalid = convert_ == null || convert_ == default;
         return !isInvalid;
+    }
+
+    // 오브젝트의 유효성 검사
+    public static bool IsValid(this GameObject obj_)
+    {
+        bool isInValid = (obj_ == null || obj_ == default);
+        return !isInValid;
+    }
+
+    public static bool IsValid<T>(this List<T> list_)
+    {
+        bool isInValid = (list_ == null || list_ == default || list_.Count < 1);
+        return !isInValid;
+    }
+    public static bool IsValid<T>(this List<T> list_, int index_)
+    {
+        bool isInValid = (list_.IsValid() == false) ||
+            (index_ < 0 || index_ >= list_.Count);
+        return !isInValid;
     }
     #endregion      // Vaild Func
 }

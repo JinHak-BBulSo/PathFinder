@@ -17,4 +17,14 @@ public static partial class GFunc
         // 가져올 텍스트메쉬 컴포넌트가 존재하는 경우
         tmpTxt.text = text_;
     }       // SetTextMeshPro()
+
+    // 카메라 사이즈를 리턴하는 함수
+    public static Vector2 GetCameraSize()
+    {
+        Vector2 cameraSize = Vector2.zero;
+        cameraSize.y = Camera.main.orthographicSize * 2.0f;
+        cameraSize.x = cameraSize.y * Camera.main.aspect;
+
+        return cameraSize;
+    }   //GetCameraSize()
 }
