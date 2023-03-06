@@ -8,7 +8,7 @@ public static partial class GData
     public const string SCENE_NAME_PLAY = "01.PlayScene";
 }
 
-// ÁöÇüÀÇ ¼Ó¼ºÀ» Á¤ÀÇ
+// ì§€í˜•ì˜ ì†ì„±ì„ ì •ì˜
 public enum TerrainType
 {
     NONE = -1,

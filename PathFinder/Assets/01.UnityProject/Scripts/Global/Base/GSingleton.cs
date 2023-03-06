@@ -15,9 +15,9 @@ public class GSingleton<T> : GComponent where T : GSingleton<T>
                 GSingleton<T>._instance = 
                     GFunc.CreateObj<T>(typeof(T).ToString());
                 DontDestroyOnLoad(_instance.gameObject);
-            }       // if: ÀÎ½ºÅÏ½º°¡ ºñ¾î ÀÖÀ» ¶§ »õ·Î ÀÎ½ºÅÏ½ºÈ­ ÇÑ´Ù
+            }       // if: ì¸ìŠ¤í„´ìŠ¤ê°€ ë¹„ì–´ ìˆì„ ë•Œ ìƒˆë¡œ ì¸ìŠ¤í„´ìŠ¤í™” í•œë‹¤
 
-            // ¿©±â¼­ ºÎÅÍ´Â ÀÎ½ºÅÏ½º°¡ Àı´ë ºñ¾îÀÖÁö ¾ÊÀ»µí?
+            // ì—¬ê¸°ì„œ ë¶€í„°ëŠ” ì¸ìŠ¤í„´ìŠ¤ê°€ ì ˆëŒ€ ë¹„ì–´ìˆì§€ ì•Šì„ë“¯?
             return _instance;
         }
     }
