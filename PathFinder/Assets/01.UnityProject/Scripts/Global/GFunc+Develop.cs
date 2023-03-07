@@ -74,6 +74,7 @@ public static partial class GFunc
     {
         bool isInValid = (list_.IsValid() == false) ||
             (index_ < 0 || index_ >= list_.Count);
+
         return !isInValid;
     }
     #endregion      // Vaild Func

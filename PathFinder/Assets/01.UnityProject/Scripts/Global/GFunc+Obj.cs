@@ -121,9 +121,9 @@ public static partial class GFunc
         GameObject newObj = new GameObject(objName);
         return newObj.AddComponent<T>();
     }       // CreateObj()
-    public static void DestroyObj(this GameObject obj_)
+    public static void DestroyObj(this GameObject obj_, float delay = 0.0f)
     {
-        GameObject.Destroy(obj_);
+        GameObject.Destroy(obj_, delay);
     }
 
     // 로컬 포지션을 기준으로 두 타일 오브젝트의 위치를 비교하는 함수
